@@ -1,0 +1,29 @@
+scenario,model,params,mean_ap,fold_scores,seconds
+candidate_household_purge,LR,"{""C"": 0.01}",0.5387921787559556,"[0.47659219350668053, 0.6009921640052307]",0.22946763038635254
+candidate_household_purge,LR,"{""C"": 0.1}",0.5308124269197825,"[0.46787899916175224, 0.5937458546778126]",0.29297637939453125
+candidate_household_purge,LR,"{""C"": 1}",0.5246015399031758,"[0.4579435986609585, 0.5912594811453931]",0.34900736808776855
+candidate_household_purge,LR,"{""C"": 10}",0.5232432534005615,"[0.45592729484152383, 0.5905592119595994]",0.37296462059020996
+candidate_household_purge,RF,"{""max_depth"": 5, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.5699745102426925,"[0.49422699098302625, 0.6457220295023588]",3.249263048171997
+candidate_household_purge,RF,"{""max_depth"": 5, ""min_samples_leaf"": 5, ""n_estimators"": 600}",0.5679703509764675,"[0.49203875012613707, 0.6439019518267979]",5.76453161239624
+candidate_household_purge,RF,"{""max_depth"": 5, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.5585953275080922,"[0.4953957171740765, 0.6217949378421079]",2.3778254985809326
+candidate_household_purge,RF,"{""max_depth"": 5, ""min_samples_leaf"": 20, ""n_estimators"": 600}",0.5611315963028976,"[0.4958670683472721, 0.626396124258523]",5.595402956008911
+candidate_household_purge,RF,"{""max_depth"": 10, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.5673595015806469,"[0.4847966378397252, 0.6499223653215686]",2.4536240100860596
+candidate_household_purge,RF,"{""max_depth"": 10, ""min_samples_leaf"": 5, ""n_estimators"": 600}",0.5660550338608983,"[0.4872154109923956, 0.6448946567294008]",5.516368389129639
+candidate_household_purge,RF,"{""max_depth"": 10, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.5618570000722103,"[0.4961184798029451, 0.6275955203414754]",2.99627947807312
+candidate_household_purge,RF,"{""max_depth"": 10, ""min_samples_leaf"": 20, ""n_estimators"": 600}",0.5623581809137165,"[0.49462203636584834, 0.6300943254615846]",5.63058614730835
+candidate_household_purge,RF,"{""max_depth"": null, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.5602680478438204,"[0.4849335522483816, 0.6356025434392593]",2.5468432903289795
+candidate_household_purge,RF,"{""max_depth"": null, ""min_samples_leaf"": 5, ""n_estimators"": 600}",0.5600539948719918,"[0.484600836935861, 0.6355071528081226]",4.945647954940796
+candidate_household_purge,RF,"{""max_depth"": null, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.559841554672633,"[0.49428790572604486, 0.6253952036192211]",2.3274877071380615
+candidate_household_purge,RF,"{""max_depth"": null, ""min_samples_leaf"": 20, ""n_estimators"": 600}",0.5603353694951688,"[0.4935692165222714, 0.6271015224680663]",5.810612201690674
+candidate_household_purge,XGB,"{""learning_rate"": 0.03, ""max_depth"": 2, ""n_estimators"": 200}",0.5550433971370333,"[0.48086222193192624, 0.6292245723421405]",0.34229207038879395
+candidate_household_purge,XGB,"{""learning_rate"": 0.03, ""max_depth"": 2, ""n_estimators"": 500}",0.5495693893604685,"[0.4668436809042946, 0.6322950978166424]",0.5660266876220703
+candidate_household_purge,XGB,"{""learning_rate"": 0.03, ""max_depth"": 4, ""n_estimators"": 200}",0.5446994845108841,"[0.45598009884128454, 0.6334188701804837]",0.3392674922943115
+candidate_household_purge,XGB,"{""learning_rate"": 0.03, ""max_depth"": 4, ""n_estimators"": 500}",0.5272880157797217,"[0.43121939660106146, 0.6233566349583819]",0.6440446376800537
+candidate_household_purge,XGB,"{""learning_rate"": 0.03, ""max_depth"": 6, ""n_estimators"": 200}",0.5390345686166007,"[0.446316389410524, 0.6317527478226774]",0.4150269031524658
+candidate_household_purge,XGB,"{""learning_rate"": 0.03, ""max_depth"": 6, ""n_estimators"": 500}",0.5240039064295254,"[0.42618608502136046, 0.6218217278376904]",0.8057634830474854
+candidate_household_purge,XGB,"{""learning_rate"": 0.1, ""max_depth"": 2, ""n_estimators"": 200}",0.5371345133004247,"[0.45205302568154865, 0.6222160009193007]",0.2833559513092041
+candidate_household_purge,XGB,"{""learning_rate"": 0.1, ""max_depth"": 2, ""n_estimators"": 500}",0.5239198523126519,"[0.4279948062328889, 0.619844898392415]",0.6247968673706055
+candidate_household_purge,XGB,"{""learning_rate"": 0.1, ""max_depth"": 4, ""n_estimators"": 200}",0.5269697008331478,"[0.4245067996519474, 0.6294326020143483]",0.3404090404510498
+candidate_household_purge,XGB,"{""learning_rate"": 0.1, ""max_depth"": 4, ""n_estimators"": 500}",0.5138269563592484,"[0.41732794595196887, 0.610325966766528]",0.6292963027954102
+candidate_household_purge,XGB,"{""learning_rate"": 0.1, ""max_depth"": 6, ""n_estimators"": 200}",0.5080504814919544,"[0.4176918604811547, 0.598409102502754]",0.4052159786224365
+candidate_household_purge,XGB,"{""learning_rate"": 0.1, ""max_depth"": 6, ""n_estimators"": 500}",0.5056779400214084,"[0.4137940645277286, 0.5975618155150881]",0.8157167434692383

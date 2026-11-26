@@ -1,0 +1,6 @@
+scenario,train,validation,test,verified_linkage,candidate_purge,train_test_candidate_overlap,validation_test_candidate_overlap
+main,14478,4946,5101,False,False,116,829
+unweighted,14478,4946,5101,False,False,116,829
+no_2021,9686,4946,5101,False,False,116,829
+no_field,14478,4946,5101,False,False,116,829
+candidate_household_purge,12303,3589,5101,False,True,0,0

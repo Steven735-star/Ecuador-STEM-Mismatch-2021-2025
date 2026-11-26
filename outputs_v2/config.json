@@ -1,0 +1,176 @@
+{
+  "seed": 42,
+  "maps": {
+    "2021": {
+      "degree": "p12b",
+      "education": "p10a",
+      "has_degree": "p12a",
+      "employed": "empleo",
+      "occupation": "p41",
+      "weight": "fexp",
+      "age": "p03",
+      "sex": "p02",
+      "ethnicity": "p15",
+      "marital": "p06",
+      "area": "area",
+      "province": "prov",
+      "psu": "upm",
+      "stratum": "estrato",
+      "income": "ingrl",
+      "activity": "condact"
+    },
+    "2022": {
+      "degree": "p12b",
+      "education": "p10a",
+      "has_degree": "p12a",
+      "employed": "empleo",
+      "occupation": "p41",
+      "weight": "fexp",
+      "age": "p03",
+      "sex": "p02",
+      "ethnicity": "p15",
+      "marital": "p06",
+      "area": "area",
+      "province": "prov",
+      "psu": "upm",
+      "stratum": "estrato",
+      "income": "ingrl",
+      "activity": "condact"
+    },
+    "2023": {
+      "degree": "p12b",
+      "education": "p10a",
+      "has_degree": "p12a",
+      "employed": "empleo",
+      "occupation": "p41",
+      "weight": "fexp",
+      "age": "p03",
+      "sex": "p02",
+      "ethnicity": "p15",
+      "marital": "p06",
+      "area": "area",
+      "province": "prov",
+      "psu": "upm",
+      "stratum": "estrato",
+      "income": "ingrl",
+      "activity": "condact"
+    },
+    "2024": {
+      "degree": "p12b",
+      "education": "p10a",
+      "has_degree": "p12a",
+      "employed": "empleo",
+      "occupation": "p41",
+      "weight": "fexp",
+      "age": "p03",
+      "sex": "p02",
+      "ethnicity": "p15",
+      "marital": "p06",
+      "area": "area",
+      "province": "prov",
+      "psu": "upm",
+      "stratum": "estrato",
+      "income": "ingrl",
+      "activity": "condact"
+    },
+    "2025": {
+      "degree": "p12b",
+      "education": "p10a",
+      "has_degree": "p12a",
+      "employed": "empleo",
+      "occupation": "p41",
+      "weight": "fexp",
+      "age": "p03",
+      "sex": "p02",
+      "ethnicity": "p15",
+      "marital": "p06",
+      "area": "area",
+      "province": "prov",
+      "psu": "upm",
+      "stratum": "estrato",
+      "income": "ingrl",
+      "activity": "condact"
+    }
+  },
+  "missing": {
+    "2021": {},
+    "2022": {},
+    "2023": {},
+    "2024": {},
+    "2025": {}
+  },
+  "links": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+  },
+  "record_keys": {
+    "2021": [
+      "id_persona",
+      "mes"
+    ],
+    "2022": [
+      "id_persona",
+      "mes"
+    ],
+    "2023": [
+      "id_persona",
+      "mes"
+    ],
+    "2024": [
+      "id_persona",
+      "mes"
+    ],
+    "2025": [
+      "id_persona",
+      "mes"
+    ]
+  },
+  "round_2021": true,
+  "design_reviewed": true,
+  "sklearn": "1.7.2",
+  "xgboost": "3.2.0",
+  "python": "3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]",
+  "grids": {
+    "LR": {
+      "C": [
+        0.01,
+        0.1,
+        1,
+        10
+      ]
+    },
+    "RF": {
+      "n_estimators": [
+        300,
+        600
+      ],
+      "max_depth": [
+        5,
+        10,
+        null
+      ],
+      "min_samples_leaf": [
+        5,
+        20
+      ]
+    },
+    "XGB": {
+      "max_depth": [
+        2,
+        4,
+        6
+      ],
+      "learning_rate": [
+        0.03,
+        0.1
+      ],
+      "n_estimators": [
+        200,
+        500
+      ]
+    }
+  }
+}
