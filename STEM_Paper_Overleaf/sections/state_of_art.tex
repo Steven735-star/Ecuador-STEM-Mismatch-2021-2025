@@ -1,0 +1,62 @@
+
+
+\subsection{Concept and measurement decisions}
+
+
+
+The review by McGuinness et al. organises phenomena that are often conflated; that by Somers et al. explores horizontal misalignment in greater depth and shows that its determinants must be interpreted in conjunction with the measurement procedure \cite{McGuinness2018,Somers2019}. In contrast to a definition focused solely on years of schooling, Robst highlights the relationship between the academic field and work \cite{Robst2007}. The implication for this project is that the target variable will not automatically incorporate unemployment, low income or over-education. These conditions may coexist with mismatch, but they do not define it.
+
+Montt proposes a normative correspondence between educational fields and occupations; Reis develops a task-based approach; Salas-Velasco uses information reported by graduates to distinguish patterns of fit \cite{Montt2017,Reis2018,Salas-Velasco2021}. All three approaches seek to link education and work, but they focus on different dimensions. A normative table is reproducible and applicable to surveys recording qualifications and occupations; it does not necessarily identify the tasks actually performed. Self-reporting reflects individual perception and depends on the questionnaire. A task-based approach requires information that cannot be reconstructed solely from the occupational code.
+
+Recent studies do not resolve this discrepancy. Cortadas-Guasch analyses surveys on graduate employment from Catalan universities using a subjective measure; Salas-Velasco examines the alignment of new Spanish degree programmes and distinguishes between horizontal and vertical situations \cite{CortadasGuasch2024,SalasVelasco2023}. In contrast, García-Mainar and Montuenga-Gómez combine occupational fields and groups in a labour force survey \cite{GarcaMainar2026}. Applying their percentages directly to Ecuador would confuse measurement frameworks. For ENEMDU, priority is given to an explicit normative rule, and it will be recognised that the label measures compatibility according to that rule, not an individually observed truth free from error.
+
+This decision requires comparable classifications. The ISCED-F manual defines educational fields and the ISCO-08 organises occupations; the ENEMDU guide documents the available variables and their standardisation \cite{Censos2025,Office2012,Statistics2014}. These documents are not studies of labour market implications, but they do make it possible to cross-check the measurements. The difference between a classification of qualifications and one of occupations justifies establishing a documented correspondence, rather than assuming that similar codes represent equivalent categories.
+
+\subsection{Heterogeneity and its implications for the labour market}
+
+
+
+Takeuchi, in his study of people with higher education in Japan, finds differences between the wage associations of vertical and horizontal mismatches. Morejón Cabrera and Mariel examine the relationship between master's degrees and both types of mismatch in Spain \cite{MorejnCabrera2024,Takeuchi2023}. The dialogue between these studies suggests that treating any postgraduate qualification as a uniform form of protection is inadvisable. In our design, educational level and field of study will be analysed separately, and income will not be included in the classification.
+
+Ege and Erdil distinguish between isolated over-education, isolated field mismatch and an overlap of both in Turkey. Kiss contrasts horizontal and vertical dimensions across university fields in Hungary \cite{Ege2023,Kiss2024}. They agree on the value of studying distinct configurations, although they use different populations and contexts. The proposed binary classification sacrifices these combinations to focus on the field of study; therefore, it will not allow us to conclude that a compatible occupation utilises the full level of university education.
+
+Tran and colleagues are studying the relationship between mismatches and wages in Vietnam; another study from the same context focuses on business and management graduates \cite{Tran2023,Tran2025}. These studies incorporate econometric procedures to address the endogeneity of wage relationships. Our objective is different: to compare out-of-sample classification, not to estimate a causal penalty. The comparison provides an interpretative framework: a variable that is important for predicting the label is not equivalent to a cause of the mismatch nor to an effect on earnings.
+
+Maleszyk links horizontal mismatch to the characteristics of employed individuals and job satisfaction in a local Polish survey \cite{Maleszyk2025}. Its geographical scope limits generalisability, but broadens the debate beyond wages. Read alongside Takeuchi and Tran, this study suggests that these consequences should be studied as additional outcomes, rather than being incorporated into a label intended to measure the relationship between education and occupation \cite{Takeuchi2023,Tran2025}. This study does not have a comparable measure of job satisfaction; therefore, it will not substitute assumptions for it.
+
+\subsection{Career paths and institutional context}
+
+
+
+Albert, Davia and Legazpe examine the persistence of mismatches and labour mobility in the labour-market entry of Spanish university graduates \cite{Albert2023}. Tang, Perales, Rowe and Baxter analyse the labour market disadvantages faced by international graduates in Australia and the significance of immigration status \cite{Tang2022}. Both demonstrate why the current situation must be interpreted within its trajectory and context. However, compiling annual ENEMDU records does not provide an equivalent follow-up of graduates. Our five-year period will allow us to assess temporal stability, rather than automatically reconstructing individual transitions.
+
+García-Mainar and Montuenga-Gómez link educational segregation by gender to mismatch, whilst Deming and Noray link STEM degree programmes to changes in the skills required \cite{Deming2020,GarcaMainar2026}. These complementary perspectives encourage an assessment of differences by sex, age and field. They do not support extrapolating patterns from other countries or attributing differences to individual preferences: the ENEMDU data also reflects labour, geographical and family constraints that are not fully accounted for.
+
+The OECD compares skills utilisation and educational attainment with PIAAC; its regional reports and the volume by Prada and Rucci highlight the problem in Latin America \cite{OECD2019,OECD2023,OECD2024,PradaRucci2025}. Compared with local studies on labour market integration, these sources provide frameworks for comparison and institutional discussion. Their heterogeneity also limits the transferability of figures: the adult population, recent graduates and employed STEM university graduates do not constitute the same population. International evidence will guide hypotheses and set limits; it will not replace the description of our population.
+
+In Ecuador, Botello Peñaloza and De La Torre and Del Pozo provide background on education and employment, whilst Sierra Pérez and Villarraga Orjuela offer an Andean comparison of young people \cite{BotelloPealoza2016,DeLaTorreB2025,SierraPrez2024}. The INEC annual bulletin and ENEMDU documentation enable us to clarify the context and empirical source \cite{Censos2025,InstitutoNacionaldeEstadsticayCensos2026}. The contribution of our study lies in the combination of STEM definition, an auditable label and temporal evaluation; we do not claim national primacy nor the absence of previous predictive applications.
+
+
+\subsection{Prediction and reproducible evaluation}
+
+
+
+Logistic regression provides an interpretable benchmark for classification; James and colleagues explain how it compares with flexible methods in statistical learning \cite{James2023}. Random Forest combines trees, whilst XGBoost implements tree boosting with regularisation and computational control \cite{Breiman2001,Chen2016}. Their original papers are valued for their methodological contribution. They do not provide evidence that any one method will perform better with Ecuadorian graduates; this is an empirical question that requires a separation between training and evaluation.
+
+Grinsztajn, Oyallon and Varoquaux find that trees perform competitively on tabular datasets; McElfresh and colleagues show that the comparison depends on the characteristics of the data and the evaluation procedure \cite{Grinsztajn2022,McElfresh2023}. Taken together, these findings support the comparison of models of varying complexity without assuming a universal advantage. The transferability of these results to a survey with weights, related observations and normative labels remains to be tested. A constant classifier will be added to verify that the models outperform a basic baseline.
+
+Kapoor and Narayanan identify information leakage as a reproducibility issue in machine learning research. Silva Filho and colleagues distinguish between the quality of probabilities and the ability to rank cases; Molnar discusses the scope of model explanations \cite{Kapoor2023,Molnar2025,SilvaFilho2023}. These contributions complement the existing literature: a model's explanation is only useful if the evaluation design is valid and if the label has a defensible interpretation. A high probability of reproducing our rule does not constitute a direct measure of professional competence.
+
+A synthesis of this background leads to three decisions. First, to employ a normative framework and make its exclusions explicit. Second, treat the predictors as associations rather than causes. Third, set aside a further year for testing, review the dependence between observations, and analyse sensitivity to measurement and data quality. The gap addressed here is a reproducible and well-defined assessment for this population and data source, not a claim that no one has ever used machine learning in employability research. 
+\begin{table}[htbp]
+\caption{Comparison of selected studies and their implications for the proposed research.\label{tab:literature}}
+\small\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{.22\linewidth}*{3}{>{\raggedright\arraybackslash}X}}\toprule Study & Approach / setting & Contribution & Limitation for this study \\ \midrule
+Somers et al. \cite{Somers2019} & Systematic review & Distinguishes horizontal mismatch measures & Heterogeneous definitions \\
+Montt \cite{Montt2017} & PIAAC; normative mapping & Basis for the target label & Requires local adaptation \\
+Reis \cite{Reis2018} & Brazil; task-based distance & Captures degree--job relatedness & Task data not available \\
+Salas-Velasco \cite{Salas-Velasco2021} & Graduate self-report & Alternative measure of fit & Perception differs from coding \\
+De La Torre and Del Pozo \cite{DeLaTorreB2025} & Ecuador; ENEMDU & National evidence on education and skills & Different mismatch outcome \\
+Kiss \cite{Kiss2024} & Hungary; degree fields & Separates vertical and horizontal fit & Different labour market \\
+Grinsztajn et al. \cite{Grinsztajn2022} & Tabular benchmarks & Justifies tree-based comparison & Not a STEM labour survey \\
+Kapoor and Narayanan \cite{Kapoor2023} & ML reproducibility & Leakage prevention & Does not establish local performance \\
+\bottomrule\end{tabularx}\end{table}

@@ -1,0 +1,114 @@
+
+
+\subsection{Design and source of information}
+
+
+
+This study is a quantitative, observational, non-experimental study with descriptive and predictive aims. Grouped annual cross-sectional data from ENEMDU for the period 2021--2025 were used. The unit of analysis was the person-period record; cross-year identity could not be verified. The predictive objective was to classify an observed employment status, not to predict students' future employment. Official documentation from ENEMDU and the annual aggregate guided harmonisation and weighting \cite{Censos2025,InstitutoNacionaldeEstadsticayCensos2026}.
+
+The raw data downloaded from INEC were retained unaltered, together with dictionaries and metadata. File names, sizes and digital fingerprints were recorded in the inventory. No individual linkage with SNIESE was carried out: no defensible common key has been established. Educational administrative statistics were not linked to survey respondents.
+
+\subsection{Population and selection}
+
+
+
+The target population comprises people in employment in Ecuador who report holding a university or postgraduate qualification and a STEM degree. The selection used p10a with codes 9 or 10, p12a equal to 1 and employment status equal to 1; the level of the qualification was also cross-checked against the CNTP catalogue. Degrees with university or postgraduate prefixes 3--6 are included. Technical and technological qualifications are excluded from this university sample without being treated as errors. The operational definition of STEM comprises fields 05, 06 and 07: natural sciences, mathematics and statistics; ICT; and engineering, industry and construction, respectively \cite{Statistics2014}.
+
+
+The completed audit identified 24,895 eligible records and 24,525 evaluable records based on the provisional correspondence. The remaining 370 are excluded in accordance with the methodology. These figures are unweighted counts of records: they do not represent the number of Ecuadorian graduates, nor do they demonstrate independence between interviews. Table~\ref{tab:audit} documents the final analytical counts.
+
+
+\begin{table}[htbp]
+\caption{Sample audit by year (unweighted person-period records, supplied project audit).\label{tab:audit}}
+\centering\begin{tabular}{lrr}\toprule Year & Eligible & Evaluable \\ \midrule
+2021 & 4853 & 4792 \\ 2022 & 4956 & 4891 \\ 2023 & 4866 & 4795 \\ 2024 & 5030 & 4946 \\ 2025 & 5190 & 5101 \\ \midrule Total & 24895 & 24525 \\ \bottomrule\end{tabular}
+\end{table}
+
+\subsection{Data preparation and harmonisation}
+
+
+
+The procedure consisted of six steps: compiling an inventory of files; checking codes and dictionaries; selecting the population; standardising titles; validating occupations; and producing a register of inclusions and exclusions. The codes were treated as categories, retaining leading zeros, and non-response values were distinguished from valid values. Code p41 was verified against INEC's CIUO catalogue before being reduced to three digits. The cross-check already carried out identifies 438 four-digit occupational groups in the catalogue. The original code and the harmonised version were retained in separate columns \cite{Office2012}.
+
+In 2021, the audit identified qualification codes associated with a loss of numerical precision. The CSV and SPSS comparison did not reveal any differences in the variables reviewed; this does not prove that INEC has confirmed the mechanism behind the problem. The strategy compared each value with the catalogue codes that could produce it and retained only groupings where candidates match in terms of field and required level. An individual degree programme was not assigned where several possible qualifications exist. Cases where eligibility could not be determined were set aside; a sensitivity analysis excluded 2021.
+
+Missing values per variable and year were recorded. The imputation of numerical predictors using the median and that of categorical predictors using explicit categorisation was learnt exclusively during the training phase. Absence indicators were added where appropriate. Standardisation for logistic regression and the coding of categories formed part of a single, optimised processing workflow within each partition; they were not calculated using the full dataset \cite{James2023,Kapoor2023}.
+
+\subsection{Construction of the target variable}
+
+
+
+The initial rule adapts Montt's correspondence between educational fields and CIUO-08 groups to three digits \cite{Montt2017}. The local operational matrix is taken from the annex to his 2015 working paper, which preceded the 2017 publication; the two versions are not counted as separate studies. The current fields 05 and 06 are grouped under science, mathematics and computing, whilst field 07 relates to engineering, industry and construction. This broad adaptation does not constitute a specific validation for Ecuador.
+
+
+For each eligible and assessable record, the indicator was 0 if the occupational group belongs to the list compatible with its field, and 1 if it does not. The indicator was omitted when it is not possible to determine the qualification or occupation, or when the method excludes the case. In the provisional version, military occupations and groups 111, 961 and 962 are excluded. The complete lists are provided in the accompanying correspondence file so that the procedure can be replicated. No case lacking information was automatically transferred to the `mismatch' category.
+
+
+The rule measures the normative relationship between field and occupation; it does not directly assess tasks, skills, job satisfaction or the required level of competence. A technical occupation may be considered compatible with engineering even if the individual is overqualified. Unemployment, underemployment and low income were not included in this label. Any alternative rule must be defined in the documentation before the final performance is assessed; correspondences must not be modified to artificially improve the models.
+
+\subsection{Predictors and excluded variables}
+
+
+
+The main dataset included comparable characteristics across the five years: age, reported sex, self-identified ethnicity, marital status, area, province, STEM field and educational attainment. Table~\ref{tab:variables} distinguishes between functions to prevent the algorithm from receiving a version of the response that it is required to classify.
+
+\begin{table}[htbp]
+\caption{Role of variables in the analytical pipeline.\label{tab:variables}}
+\small\begin{tabularx}{\linewidth}{p{.30\linewidth}XX}\toprule Information & Role & Treatment \\ \midrule
+Degree and occupation & Label construction & Retain validated originals \\
+STEM field and level & Predictors & Compare with and without field \\
+Demographics and geography & Candidate predictors & Harmonise categories and missingness \\
+Survey weights and design & Estimation & Exclude as predictors \\
+Identifiers and year & Audit and partition & Exclude identity as predictor \\
+Occupation and derivatives & Excluded & Prevent leakage \\\bottomrule\end{tabularx}\end{table}
+
+
+
+The field of study contributes to the construction of y, but does not determine it on its own, as occupation also plays a role. Its inclusion is justified by the classification objective and was compared with a version without this field to identify the extent to which performance depends on that structure. p41, the CIUO groups and any derived compatibility indicators were excluded. Income from current employment, industry sector, job title and post characteristics were excluded from the main model. Income and employment conditions were analysed separately as descriptive outcomes.
+
+\subsection{Temporal separation and dependency}
+
+
+
+The temporal evaluation used 2025 as the test period. During the process, the period 2021--2023 was used for adjustment and searches with increasing time windows; 2024 served to validate the chosen configuration, calibration and threshold. Once the configuration has been selected, the base estimator fitted using 2021--2023, the calibration and the threshold validated using 2024 were frozen; the complete procedure was evaluated on 2025 data; these data had already been examined in the first computational run, so the corrected evaluation is not a new untouched test. 2024 was excluded from the fine-tuning of the base estimator to maintain the separation of their functions. The internal windows compared the 2021 training set with the 2022 validation set, and the 2021--2022 training set with the 2023 validation set. Sensitivity analysis excluding 2021 reduced these windows accordingly.
+
+Individual and household identifiers were audited. A unique record key was not interpreted as evidence of distinct individuals across years. Longitudinal identity could not be established; a candidate-household exclusion scenario was therefore implemented without treating candidate matches as verified identity. Temporal division, on its own, does not resolve this problem \cite{Kapoor2023}.
+
+Clusters and strata were preserved for uncertainty assessment. Effective partition sizes were recorded. Test labels were not used for fitting preprocessing or calibration, selecting thresholds, or changing the outcome definition.
+
+\subsection{Models and fitting}
+
+
+
+Logistic regression with L2 regularisation served as the baseline model; Random Forest and XGBoost represented tree-based methods with non-linear relationships \cite{Breiman2001,Chen2016,James2023}. A fixed seed (42) and the same set of eligible variables were used. A constant classifier was added that uses only the weighted proportion of the positive class during training. The search parameters for regression were C set to 0.01, 0.1, 1 and 10. For Random Forest, 300 or 600 trees were tested, with a depth of 5, 10 or unlimited, and a minimum leaf size of 5 or 20. For XGBoost, depths of 2, 4 or 6, a learning rate of 0.03 or 0.1 and 200 or 500 iterations were considered, with row and column subsampling of 0.8. The combinations evaluated are recorded in the grid output files.
+
+The computational budget and the combinations tested were recorded. The primary selection criterion maximised average precision (AP) calculated using the validation weights, whilst also examining calibration and stability as supplementary criteria. The findings of Grinsztajn and McElfresh justify an empirical comparison but do not predict the winner \cite{Grinsztajn2022,McElfresh2023}. No synthetic oversampling was used.
+
+\subsection{Weighting and assessment}
+
+
+
+Annual factors were used for descriptive estimates within each year. Factors from different years were not combined to interpret the total as a single population. In clustered training, the weights were normalised so that each year contributes the same total mass, and this approach was compared with an unweighted fit. In 2025, metrics weighted by the factors for that year and unweighted metrics were exported, with an explanation of their target populations. The factors allow the design to be approximated, but do not convert a filtered sample into independent observations \cite{Censos2025,InstitutoNacionaldeEstadsticayCensos2026}.
+
+The ROC area, average precision, sensitivity, specificity, positive precision, F1 score, balanced accuracy and confusion matrix for class 1 were reported. The proportion of positive cases was included as a reference for interpreting precision-recall. The threshold was not chosen based on the test: it was set during validation to maximise F1 and compared with 0.5. For probabilities, Brier scores and calibration curves were calculated; fitted classifiers were calibrated by logistic (Platt) scaling on 2024 predictions \cite{SilvaFilho2023}.
+
+Uncertainty intervals were estimated by resampling primary units within strata where the observed variables and the number of clusters permit. 500 replicates were used, recording any failures or strata containing only a single unit. No individual-level bootstrap was substituted. Performance differences were calculated using the same test cases and paired replicates to ensure consistent comparisons.
+
+\subsection{Interpretation and sensitivity}
+
+
+
+
+The interpretation combined regression coefficients with permutation-based importance (mean AP decrease) and, where appropriate, SHAP explanations from tree-based models, documenting their assumptions \cite{Molnar2025}. Predictive associations were examined, not causes. Correlated variables may swap positions in terms of importance, and the model may reproduce patterns observed in the normative rule. Stability were reported by year, sex and field where there are sufficient cases and both classes, avoiding conclusions based on small subgroups.
+
+Four sensitivity analyses were completed: excluding 2021; training without weights; removing the STEM field from the predictors; and conservatively excluding candidate overlapping households from earlier partitions. Candidate household keys were obtained by removing the final two digits from the supplied household identifier; this is a heuristic, not verified longitudinal linkage. An alternative correspondence was not evaluated because a documented second rule was unavailable. The stability of performance was interpreted in conjunction with the stability of the measurement, not solely on the basis of an accuracy figure.
+
+\subsection{Reproducibility and scope of the research}
+
+
+
+The repository separates original data, analytical files and presentation outputs. The dictionary of variables, versioned rules, exclusions, seeds, dependencies and partitions were retained. The literature review in this article is thematic and targeted; it is not presented as a systematic review, nor is it claimed that all texts have been read in full. The supplied bibliographic records will be checked against publisher metadata and full texts before final submission. The foundational and recent studies were retained.
+
+The analysis utilised anonymised public microdata and aggregated results, without attempting to identify individuals. The analysis will not be used for individual employment decisions. Any institutional ethical review requirement remains to be confirmed. The computational notebook and aggregate outputs accompany the manuscript. Local validation of the normative rule remains a limitation. 
+\subsection{Additional descriptive analysis}
+Weighted annual proportions were computed by field, sex, province, age and identifiable degree. Nominal labour income (\texttt{ingrl}) was summarised among finite nonmissing observations, excluding 999999 but retaining recorded zero and negative values; adequate employment (\texttt{condact}=1) and underemployment (codes 2 and 3) were compared between labels. Occupational shares among mismatched records were computed from survey weights. For descriptive prevalence, the bootstrap resampled primary sampling units within strata using the annual frame, including units without eligible STEM records. Model intervals used the evaluable test sample; 14 singleton strata were retained and results are approximate. No inflation adjustment or causal income model was applied.

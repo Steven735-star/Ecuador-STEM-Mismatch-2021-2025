@@ -1,0 +1,13 @@
+\begin{center}
+\textbf{Graphical Abstract}\par\smallskip
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[node distance=5mm, every node/.style={font=\sffamily\small}, stage/.style={draw=blue!55!black,fill=blue!5,rounded corners=2pt,align=center,text width=3.1cm,minimum height=1.15cm}, arrow/.style={-{Stealth},thick,blue!55!black}]
+\node[stage] (a) {\textbf{ENEMDU 2021--2025}\\24,895 eligible records};
+\node[stage,right=of a] (b) {\textbf{Field--occupation rule}\\24,525 evaluable records};
+\node[stage,right=of b] (c) {\textbf{Binary label}\\Compatible / mismatch};
+\node[stage,below=of c] (d) {\textbf{Classifiers}\\LR / RF / XGBoost};
+\node[stage,left=of d] (e) {\textbf{Temporal evaluation}\\2021--23 / 2024 / 2025};
+\node[stage,left=of e] (f) {\textbf{2025 results}\\40.28\% mismatch; LR AUC 0.652};
+\draw[arrow](a)--(b);\draw[arrow](b)--(c);\draw[arrow](c)--(d);\draw[arrow](d)--(e);\draw[arrow](e)--(f);
+\end{tikzpicture}}\par\smallskip
+{\footnotesize Counts are unweighted; the mismatch estimate is weighted.}
+\end{center}

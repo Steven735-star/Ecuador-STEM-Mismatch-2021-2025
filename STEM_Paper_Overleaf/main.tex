@@ -1,0 +1,53 @@
+\documentclass[journal,article,submit,pdftex,moreauthors]{Definitions/mdpi}
+\usepackage[english]{babel}
+% Localización de los rótulos incluidos literalmente en la clase MDPI.
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usetikzlibrary{arrows.meta,positioning}
+
+\firstpage{1}
+\makeatletter\setcounter{page}{\@firstpage}\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\datereceived{}
+\daterevised{}
+\dateaccepted{}
+\datepublished{}
+\hreflink{}
+\Title{Mismatch between field of study and employment among STEM university graduates in Ecuador: a machine learning approach}
+\TitleCitation{Mismatch between field of study and employment among STEM university graduates in Ecuador}
+% ORCID supplied by the authors in their previous LaTeX document.
+\newcommand{\orcidauthorA}{0000-0001-5682-9705}
+\newcommand{\orcidauthorB}{0009-0008-1980-6086}
+\newcommand{\orcidauthorC}{0000-0002-1691-1947}
+\Author{Harolt S. Farinango Palacios $^{1,*}$\orcidA{}, Steven Pa\'{u}l Rodr\'{i}guez Guerrero $^{1}$\orcidB{} and Kevin Andr\'{e}s Erazo Y\'{e}pez $^{1}$\orcidC{}}
+\AuthorNames{Harolt S. Farinango Palacios, Steven Pa\'{u}l Rodr\'{i}guez Guerrero and Kevin Andr\'{e}s Erazo Y\'{e}pez}
+\AuthorCitation{Farinango Palacios, H.S.; Rodr\'{i}guez Guerrero, S.P.; Erazo Y\'{e}pez, K.A.}
+\address{%
+$^{1}$ \quad School of Mathematical and Computational Sciences, Yachay Tech University, Hacienda San Jos\'{e} s/n, San Miguel de Urcuqu\'{i} 100119, Ecuador; harolt.farinango@yachaytech.edu.ec (H.S.F.P.); steven.rodriguez@yachaytech.edu.ec (S.P.R.G.); kevin.erazo@yachaytech.edu.ec (K.A.E.Y.)}
+\corres{ harolt.farinango@yachaytech.edu.ec}
+\abstract{Obtaining a university degree and entering the labour market do not guarantee a match between education and occupation. This study classifies mismatch by field of study amongst employed individuals with STEM university degrees in Ecuador, using annual ENEMDU microdata from 2021 to 2025. The research is quantitative, observational and predictive. A normative label was constructed using educational and occupational classifications and an adaptation of Montt's correspondence. Logistic regression, Random Forest and XGBoost were compared using 2021--2023 for development, 2024 for validation and 2025 for temporal testing. Of 24,895 eligible person-period records, 24,525 were evaluable. Weighted mismatch in 2025 was 40.28\% (approximate 95\% bootstrap interval: 36.70--44.63\%). The median nominal labour income was USD 898 among compatible records and USD 663 among mismatched records. Logistic regression achieved the highest ROC-AUC (0.6522), whereas XGBoost achieved the highest average precision (0.5673) and Random Forest the highest balanced accuracy (0.5931). Sex, STEM field and province were among the most important predictors. Sensitivity analyses showed modest changes in discrimination after excluding 2021 and potentially overlapping households. These findings support a descriptive assessment of observed educational and occupational matching, but predictive performance remains limited and the results do not establish causality or measure unfilled vacancies. The code and replication materials are available at \url{https://github.com/Steven735-star/Ecuador-STEM-Mismatch-2021-2025}.}
+\keyword{field-of-study mismatch; STEM graduates; ENEMDU; machine learning; Ecuador}
+
+\begin{document}
+\input{sections/graphical_abstract}
+\section{Introduction}
+\input{sections/introduction}
+\section{State of the Art}
+\input{sections/state_of_art}
+\section{Materials and Methods}
+\input{sections/methods}
+\section{Results}
+\input{sections/results}
+\section{Discussion}
+\input{sections/discussion}
+\section{Conclusions}
+\input{sections/conclusions}
+\funding{No external funding was reported for this academic project.}
+\dataavailability{The analysis uses public ENEMDU annual microdata and INEC classifications. The computational workflow and replication materials are available at \url{https://github.com/Steven735-star/Ecuador-STEM-Mismatch-2021-2025}.}
+\reftitle{References}
+\bibliography{references}
+\end{document}
